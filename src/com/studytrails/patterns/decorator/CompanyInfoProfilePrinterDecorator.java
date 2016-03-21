@@ -3,7 +3,6 @@ package com.studytrails.patterns.decorator;
 public class CompanyInfoProfilePrinterDecorator extends ProfilePrinter
 {
 
-	Profile profile;
 
 	public CompanyInfoProfilePrinterDecorator(Profile profile)
 	{

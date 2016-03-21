@@ -2,7 +2,6 @@ package com.studytrails.patterns.decorator;
 
 public class CollegeInfoProfilePrinterDecorator extends ProfilePrinter
 {
-	Profile profile;
 
 	public CollegeInfoProfilePrinterDecorator(Profile profile)
 	{
