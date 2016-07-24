@@ -77,15 +77,15 @@ public class FilesExample {
 
 		// TODO how to create a hard link. This example does not work on all
 		// operating systems
-		// Files.createLink(FileSystems.getDefault().getPath("a-link"), ainb);
+		 Files.createLink(FileSystems.getDefault().getPath("a-link"), ainb);
 		// TODO How to delete a file or directory
-//		Files.delete(cPath);
+		Files.delete(cPath);
 		// TODO How to delete a file or directory only if it exists
 //		Files.deleteIfExists(cPath);
 		// TODO How to check if a file or directory exists. A symbolic link is
 		// followed by default. The deafult behaviou
 		// may be changed by using the NOFOLLOW_LINKS option
-//		System.out.println(Files.exists(cPath, LinkOption.NOFOLLOW_LINKS));
+		System.out.println(Files.exists(cPath, LinkOption.NOFOLLOW_LINKS));
 
 		// get the basic attributes of a file
 		BasicFileAttributes basicAttributes = Files.readAttributes(
