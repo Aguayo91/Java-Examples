@@ -35,12 +35,7 @@ public class SpringFileToGist {
 			String gist = gitToGistMap.get(workspace);
 			// iterate over workspace and get all folders that begin with spring
 			File file = new File(workspaceHome + workspace);
-			File[] a = file.listFiles();
-			for (File file2 : a) {
-				if (file2.getName().startsWith("spring")) {
-					parseSpringDirectory(file2, file2.getName(), gist);
-				}
-			}
+			parseSpringDirectory(file, workspace, gist);
 		}
 	}
 
@@ -49,9 +44,8 @@ public class SpringFileToGist {
 		for (File file : files) {
 			if (file.isDirectory()) {
 				parseSpringDirectory(file, prefix + "-" + file.getName().substring(0, 1), gist);
-			}
-			if (file.getName().endsWith("java") || file.getName().endsWith("xml")) {
-				FileUtils.copyFile(file, new File(gistDirectoryHome + gist + prefix + "-" + file.getName()));
+			} else if (file.getName().endsWith("java") || file.getName().endsWith("xml")) {
+				FileUtils.copyFile(file, new File(gistDirectoryHome + gist + File.separator + prefix + "-" + file.getName()));
 			}
 
 		}
